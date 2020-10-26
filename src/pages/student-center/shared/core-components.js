@@ -205,7 +205,7 @@ export class DashboardSearch extends React.Component {
     render() {
         return (
             <div className="dashboard-card personal-container">
-                <Card className="dashboard-card">
+                <Card className="dashboard-card text-only">
                     <h3>Search for Classes</h3>
                 </Card>
             </div>
