@@ -4,6 +4,7 @@ import { ThemeProvider } from 'emotion-theming';
 import theme from '@rebass/preset';
 
 import Home from '../pages/home/home.js';
+import Dashboard from '../pages/student-center/dashboard/dashboard.js';
 import Academics from '../pages/student-center/academics/academics.js';
 import Search from '../pages/student-center/academics/search/search.js';
 import Financial from '../pages/student-center/financial/financial.js';
@@ -19,6 +20,9 @@ function App() {
           <Switch>
             <Route exact path="/">
               <Home />
+            </Route>
+            <Route exact path="/student-center/dashboard">
+              <Dashboard />
             </Route>
             <Route exact path="/student-center/academics">
               <Academics />

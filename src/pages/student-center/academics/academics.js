@@ -2,6 +2,36 @@ import React from 'react';
 import { Box, Card, Flex } from 'rebass';
 
 import Page from '../../page.js';
+import Loading from '../shared/loading.js';
+
+class Classes extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            loading: true,
+            classes: []
+        }
+    }
+
+    render() {
+        return (
+            <div className="classes">
+                <Card>
+                    {(this.state.loading) ? <Loading /> : 
+                        <div id="class-list">
+                            {this.state.classes.map((curr, index) => (<div key={`class-${index}`}>
+                                <ul>
+                                    <li>{curr.name}</li>
+                                </ul>
+                            </div>))}
+                        </div>
+                    }
+                </Card>
+            </div>
+        )
+    }
+}
+
 
 const Content = () => {
     return (
@@ -11,14 +41,7 @@ const Content = () => {
                 p={3}
                 width={1}
             >
-                <Card>
-                    <ul style={{ listStyleType: "none" }}>
-                        <li>COMP 426 - 001</li>
-                        <li>COMP 426 - 001</li>
-                        <li>COMP 426 - 001</li>
-                        <li>COMP 426 - 001</li>
-                    </ul>
-                </Card>
+                <Classes />
             </Box>
 
             <Flex className="academic-actions">
